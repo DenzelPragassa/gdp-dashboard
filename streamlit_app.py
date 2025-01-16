@@ -26,7 +26,7 @@ def get_gdp_data():
     raw_gdp_df = pd.read_csv(DATA_FILENAME)
 
     MIN_YEAR = 1960
-    MAX_YEAR = 2024
+    MAX_YEAR = 2022
 
     # The data above has columns like:
     # - Country Name
@@ -84,7 +84,7 @@ from_year, to_year = st.slider(
     max_value=max_value,
     value=[min_value, max_value])
 
-countries = gdp_df['Country Code'].unique()
+countries = gdp_df['Country'].unique()
 
 if not len(countries):
     st.warning("Select at least one country")
